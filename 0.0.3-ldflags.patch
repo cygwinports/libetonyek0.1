@@ -1,0 +1,11 @@
+--- origsrc/libetonyek-0.0.3/src/lib/Makefile.am	2013-12-05 06:01:21.000000000 -0600
++++ src/libetonyek-0.0.3/src/lib/Makefile.am	2014-02-04 08:58:22.692117400 -0600
+@@ -1,7 +1,7 @@
+ BUILT_SOURCES = KEY1Token.inc KEY2Token.inc
+ GPERFFLAGS = --compare-strncmp --enum --null-strings --readonly-tables
+ 
+-if PLATFORM_WIN32
++if OS_WIN32
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -avoid-version
+ else
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)

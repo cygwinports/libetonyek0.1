@@ -1,0 +1,27 @@
+NAME="libetonyek0.1"
+VERSION=0.1.1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Apple Keynote format import library"
+DESCRIPTION="libetonyek is a library and a set of tools for reading and
+converting Apple Keynote presentations. The library tries to extract the
+most important parts of version 2 format of Keynote."
+HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
+SRC_URI="http://dev-www.libreoffice.org/src/libetonyek/libetonyek-${VERSION}.tar.bz2"
+SRC_DIR="libetonyek-${VERSION}"
+PATCH_URI="
+	0.0.3-ldflags.patch
+	0.0.3-vpath.patch
+"
+
+PKG_NAMES="libetonyek-tools ${NAME}_1 ${NAME}-devel ${NAME}-doc"
+libetonyek_tools_CATEGORY="Graphics"
+libetonyek_tools_OBSOLETES="libetonyek-bin"
+libetonyek_tools_SUMMARY=${SUMMARY/library/utilities}
+libetonyek_tools_CONTENTS="usr/bin/*.exe"
+libetonyek0_1_1_CONTENTS="--exclude=html usr/bin/*-0.1-1.dll usr/share/doc/"
+libetonyek0_1_devel_CONTENTS="usr/include/ usr/lib/"
+libetonyek0_1_doc_CATEGORY="Doc"
+libetonyek0_1_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+KEEP_LA_FILES="none"
