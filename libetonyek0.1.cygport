@@ -1,6 +1,6 @@
 NAME="libetonyek0.1"
 VERSION=0.1.1
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="Apple Keynote format import library"
 DESCRIPTION="libetonyek is a library and a set of tools for reading and
