@@ -1,6 +1,6 @@
 NAME="libetonyek0.1"
-VERSION=0.1.1
-RELEASE=3
+VERSION=0.1.6
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Apple Keynote format import library"
 DESCRIPTION="libetonyek is a library and a set of tools for reading and
@@ -10,6 +10,7 @@ HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
 SRC_URI="http://dev-www.libreoffice.org/src/libetonyek/libetonyek-${VERSION}.tar.bz2"
 SRC_DIR="libetonyek-${VERSION}"
 PATCH_URI="
+	https://github.com/LibreOffice/libetonyek/commit/f6d14b3b510de5c50e45c98fe812a73ba00f3def.patch#/libetonyek-0.1.6-mdds12.patch
 	0.0.3-ldflags.patch
 	0.0.3-vpath.patch
 "
@@ -23,5 +24,7 @@ libetonyek0_1_1_CONTENTS="--exclude=html usr/bin/*-0.1-1.dll usr/share/doc/"
 libetonyek0_1_devel_CONTENTS="usr/include/ usr/lib/"
 libetonyek0_1_doc_CATEGORY="Doc"
 libetonyek0_1_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+CYGCONF_ARGS="--with-mdds=1.2"
 
 KEEP_LA_FILES="none"
